@@ -30,24 +30,24 @@ public class ReservaService {
     public boolean hasReserved(String cpf) {
         for (Reserva r: reservas) {
             if (r.getClient().getCpf().contains(cpf) && r.getReservaStatus() == reservaStatus.ATIVA) {
-                logger.info("Cliente já tem reserva ativa nesse quarto: {}" + r.getRoom().toString());
+                System.out.println("Cliente já tem reserva ativa nesse quarto: " + r.getRoom().toString());
                 return true;
             }
         }
-        logger.info("Cliente ainda não hospedado, continuando...");
+        System.out.println("Cliente ainda não hospedado, continuando...");
         return false;
     }
 
-    public void searchReservation(int roomNumber, char op) {
+    public void searchReservation(int roomNumber) {
         for (Reserva r: reservas) {
             if (r.getRoom().getNumber() == roomNumber) {
-                if (op == 'F') {
-                    r.setReservaStatus(reservaStatus.FINALIZADA);
-                    System.out.println("Reserva finalizada");
-                }
-                else {
+                if (r.getRoom().getStatus() == Status.RESERVADO) {
                     r.setReservaStatus(reservaStatus.CANCELADA);
                     System.out.println("Reserva cancelada");
+                }
+                else {
+                    r.setReservaStatus(reservaStatus.FINALIZADA);
+                    System.out.println("Reserva finalizada");
                 }
             }
         }

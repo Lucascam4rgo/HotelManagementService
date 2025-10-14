@@ -50,7 +50,7 @@ public class Quarto {
 
     @Override
     public String toString() {
-        return "QUARTO: " + number + ", " + type + ", " + dailyPrice
+        return "QUARTO - " + number + ", " + type + ", " + dailyPrice
                 + ", " + status;
     }
 }

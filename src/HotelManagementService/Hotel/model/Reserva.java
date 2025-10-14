@@ -78,8 +78,8 @@ public class Reserva {
     public String toString() {
         return "RESERVA: ID - " + id + ", DATA DE CHECK-IN - " + checkin_date +
                 ", DATA DE CHECKOUT - "
-                + checkout_date + ", VALOR TOTAL - " + total_value + ", CLIENTE - " + client.toString()
-                + ", QUARTO - " +
+                + checkout_date + ", VALOR TOTAL - " + total_value + "\n" + client.toString()
+                + ", " +
                 room.toString() + ", STATUS - " + reservaStatus;
     }
 }

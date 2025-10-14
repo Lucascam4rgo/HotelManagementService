@@ -21,6 +21,10 @@ public class RoomService {
 
     }
 
+    public boolean searchRoom(int roomNumber) {
+        return rooms.stream().anyMatch(n -> n.getNumber().equals(roomNumber));
+    }
+
     public Quarto roomStatus(Integer roomNumber) {
 
         for (Quarto r : rooms) {
@@ -35,7 +39,7 @@ public class RoomService {
 
         for (Quarto r : rooms) {
             if (r.getNumber().equals(roomNumber) &&
-                    (r.getStatus() == Status.LIMPANDO || r.getStatus() == Status.OCUPADO)) {
+                    (r.getStatus() == Status.RESERVADO || r.getStatus() == Status.OCUPADO)) {
                 return r;
             }
         }
@@ -48,6 +52,23 @@ public class RoomService {
 
          return number.getDailyPrice().multiply(BigDecimal.valueOf(durationStay));
 
+    }
+
+    public boolean allFull() {
+        return rooms.stream().allMatch(r -> r.getStatus() != Status.DISPONIVEL);
+    }
+
+    public void finalizarLimpeza(int roomNumber) {
+        for (Quarto q: rooms) {
+            if (q.getNumber().equals(roomNumber) && q.getStatus() == Status.LIMPANDO) {
+                q.setStatus(Status.DISPONIVEL);
+                System.out.println("Quarto agora está disponível");
+            }
+            else {
+                System.out.println("O quarto não está sendo limpado");
+            }
+        }
+        return;
     }
 
     public void showRooms() {

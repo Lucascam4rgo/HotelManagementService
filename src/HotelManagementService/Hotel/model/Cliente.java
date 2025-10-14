@@ -109,14 +109,14 @@ public class Cliente {
         }
     }
 
-    private String formatarCpf(String cpf) {
+    public String formatarCpf(String cpf) {
         return cpf.substring(0, 3) + "." +
                 cpf.substring(3, 6) + "." +
                 cpf.substring(6, 9) + "-" +
                 cpf.substring(9, 11);
     }
 
-    private String formatarPhone(String phone) {
+    public String formatarPhone(String phone) {
         return "(" + phone.substring(0, 2) + ")" +
                 phone.substring(2, 7) + "-" +
                 phone.substring(7);
@@ -124,7 +124,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "CLIENTE: " + name + ", " + cpf + ", " + email +
+        return "CLIENTE - " + name + ", " + cpf + ", " + email +
                 ", " + phone;
     }
 }
