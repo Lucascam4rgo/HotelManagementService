@@ -1,4 +1,4 @@
-package HotelManagementService.Hotel.model;
+package HotelManagementService.Hotel.model.entities;
 
 public class Cliente {
 

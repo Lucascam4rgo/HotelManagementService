@@ -1,13 +1,14 @@
-package HotelManagementService.Hotel.service;
+package HotelManagementService.Hotel.model.service;
 
-import HotelManagementService.Hotel.model.Quarto;
-import HotelManagementService.Hotel.model.Status;
+import HotelManagementService.Hotel.model.entities.Quarto;
+import HotelManagementService.Hotel.model.enums.Status;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class RoomService {
 
@@ -59,16 +60,21 @@ public class RoomService {
     }
 
     public void finalizarLimpeza(int roomNumber) {
-        for (Quarto q: rooms) {
-            if (q.getNumber().equals(roomNumber) && q.getStatus() == Status.LIMPANDO) {
-                q.setStatus(Status.DISPONIVEL);
-                System.out.println("Quarto agora está disponível");
+
+            Optional<Quarto> quarto = rooms.stream().filter(q -> q.getNumber().equals(roomNumber))
+                    .findFirst();
+
+            if (quarto.isEmpty()) {
+                System.out.println("Quarto não encontrado");
+                return;
             }
-            else {
+
+            if (quarto.get().getStatus() == Status.LIMPANDO) {
+                System.out.println("Quarto agora está disponível");
+                quarto.get().setStatus(Status.DISPONIVEL);
+            } else {
                 System.out.println("O quarto não está sendo limpado");
             }
-        }
-        return;
     }
 
     public void showRooms() {

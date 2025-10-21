@@ -1,4 +1,7 @@
-package HotelManagementService.Hotel.model;
+package HotelManagementService.Hotel.model.entities;
+
+import HotelManagementService.Hotel.model.enums.Status;
+import HotelManagementService.Hotel.model.enums.Type;
 
 import java.math.BigDecimal;
 

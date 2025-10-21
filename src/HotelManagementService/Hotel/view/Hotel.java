@@ -1,15 +1,11 @@
 package HotelManagementService.Hotel.view;
 
-import HotelManagementService.Hotel.model.*;
-import HotelManagementService.Hotel.service.ClientService;
-import HotelManagementService.Hotel.service.ReservaService;
-import HotelManagementService.Hotel.service.RoomService;
+import HotelManagementService.Hotel.model.service.ClientService;
+import HotelManagementService.Hotel.model.service.ReservaService;
+import HotelManagementService.Hotel.model.service.RoomService;
 import HotelManagementService.Hotel.utils.HotelMenuHandler;
 import HotelManagementService.Hotel.utils.InputUtils;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -18,7 +14,6 @@ public class Hotel {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
 
         ClientService clientService = new ClientService();
         RoomService rooms = new RoomService();
@@ -89,7 +84,7 @@ public class Hotel {
 
     public static int menu(Scanner sc) {
         System.out.println("------------------------");
-        System.out.println("   HOTEL LUCAS    ");
+        System.out.println("   HOTEL   ");
         System.out.println("------------------------");
         System.out.println(" ");
         System.out.println(" [1] - Cadastro de Clientes");

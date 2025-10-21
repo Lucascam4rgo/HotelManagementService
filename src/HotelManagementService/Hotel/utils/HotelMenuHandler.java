@@ -1,9 +1,14 @@
 package HotelManagementService.Hotel.utils;
 
-import HotelManagementService.Hotel.model.*;
-import HotelManagementService.Hotel.service.ClientService;
-import HotelManagementService.Hotel.service.ReservaService;
-import HotelManagementService.Hotel.service.RoomService;
+import HotelManagementService.Hotel.model.entities.Cliente;
+import HotelManagementService.Hotel.model.entities.Quarto;
+import HotelManagementService.Hotel.model.entities.Reserva;
+import HotelManagementService.Hotel.model.enums.Status;
+import HotelManagementService.Hotel.model.enums.Type;
+import HotelManagementService.Hotel.model.enums.reservaStatus;
+import HotelManagementService.Hotel.model.service.ClientService;
+import HotelManagementService.Hotel.model.service.ReservaService;
+import HotelManagementService.Hotel.model.service.RoomService;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

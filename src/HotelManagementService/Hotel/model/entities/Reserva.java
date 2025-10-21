@@ -1,4 +1,6 @@
-package HotelManagementService.Hotel.model;
+package HotelManagementService.Hotel.model.entities;
+
+import HotelManagementService.Hotel.model.enums.reservaStatus;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

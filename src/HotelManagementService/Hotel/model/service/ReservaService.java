@@ -1,8 +1,8 @@
-package HotelManagementService.Hotel.service;
+package HotelManagementService.Hotel.model.service;
 
-import HotelManagementService.Hotel.model.Reserva;
-import HotelManagementService.Hotel.model.Status;
-import HotelManagementService.Hotel.model.reservaStatus;
+import HotelManagementService.Hotel.model.entities.Reserva;
+import HotelManagementService.Hotel.model.enums.Status;
+import HotelManagementService.Hotel.model.enums.reservaStatus;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
